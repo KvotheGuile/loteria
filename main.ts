@@ -22,6 +22,7 @@ input.onButtonPressed(Button.A, function () {
         basic.clearScreen()
     } else {
         basic.showIcon(IconNames.No)
+        basic.clearScreen()
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -42,5 +43,6 @@ input.onGesture(Gesture.Shake, function () {
         Num1 = 0
         Num2 = 0
         Num3 = 0
+        basic.clearScreen()
     }
 })
