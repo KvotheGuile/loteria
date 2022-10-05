@@ -1,10 +1,11 @@
-let Num1 = 0
+let good = 0
 let Num2 = 0
-let Num3 = 0
+let Num1 = 0
 let storage = 0
+let Num3 = 0
 input.onButtonPressed(Button.A, function () {
-    if (!(Num1 == 0 && (Num2 == 0 && Num3 == 0))) {
-        for (let index = 0; index < 12; index++) {
+    if (good == 1) {
+        for (let index = 0; index < 6; index++) {
             if (Num2 < Num1) {
                 storage = Num2
                 Num2 = Num1
@@ -16,9 +17,9 @@ input.onButtonPressed(Button.A, function () {
                 Num2 = storage
             }
         }
-        basic.showNumber(Num1)
-        basic.showNumber(Num2)
         basic.showNumber(Num3)
+        basic.showNumber(Num2)
+        basic.showNumber(Num1)
         basic.clearScreen()
     } else {
         basic.showIcon(IconNames.No)
@@ -38,11 +39,13 @@ input.onGesture(Gesture.Shake, function () {
         basic.showNumber(Num2)
         basic.showNumber(Num3)
         basic.clearScreen()
+        good = 1
     } else {
         basic.showIcon(IconNames.No)
         Num1 = 0
         Num2 = 0
         Num3 = 0
         basic.clearScreen()
+        good = 0
     }
 })
